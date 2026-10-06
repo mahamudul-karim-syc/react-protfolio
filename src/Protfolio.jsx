@@ -155,29 +155,28 @@ const projects = [
     github: "https://github.com/mahamudul-karim-syc/Assignment-02",
   },
 
-{
-  title: "Portfolio Web Site",
-  description:
-    "A modern and responsive personal portfolio website showcasing my skills, projects, education and contact information.",
-  technologies: [
-    {
-      name: "React",
-      className: "bg-cyan-500/10 text-cyan-400",
-    },
-    {
-      name: "Tailwind CSS",
-      className: "bg-sky-500/10 text-sky-400",
-    },
-    {
-      name: "JavaScript",
-      className: "bg-yellow-500/10 text-yellow-400",
-    },
-  ],
+  {
+    title: "Protfolio Web Site",
+    description:
+      "A complete library management platform with authentication, book management, reservations and role-based access.",
+    technologies: [
+      {
+        name: "React",
+        className: "bg-cyan-500/10 text-cyan-400",
+      },
+      {
+        name: "FastAPI",
+        className: "bg-green-500/10 text-green-400",
+      },
+      {
+        name: "PostgreSQL",
+        className: "bg-purple-500/10 text-purple-400",
+      },
+    ],
 
-  live: "#",
-  github: "#",
-},
-
+    live: "#",
+    github: "#",
+  },
 ];
 
 // ======================================================
@@ -1075,222 +1074,7 @@ const Protfolio = () => {
         </div>
       </section>
 
-      {/* ================= CONTACT SECTION ================= */}
-      <section
-        id="contact"
-        className="border-t border-[#243557] bg-[#0b1730] px-4 py-20 text-white sm:px-6 lg:px-8"
-      >
-        <div className="mx-auto max-w-7xl">
-          {/* Section Heading */}
-          <div className="mb-12 text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#1597ff]">
-              Contact
-            </p>
-
-            <h2 className="text-3xl font-bold sm:text-4xl">Get In Touch</h2>
-
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-400">
-              Have a project idea or want to work together? Feel free to send me
-              a message. I'll get back to you as soon as possible.
-            </p>
-          </div>
-
-          {/* Contact Content */}
-          <div className="grid gap-10 lg:grid-cols-2">
-            {/* ================= LEFT SIDE ================= */}
-            <div>
-              <h3 className="mb-4 text-2xl font-semibold">Let's Talk</h3>
-
-              <p className="mb-8 max-w-lg leading-7 text-gray-400">
-                I'm always interested in hearing about new projects, creative
-                ideas, and opportunities. If you have something in mind, let's
-                discuss it.
-              </p>
-
-              {/* Email */}
-              <div className="mb-6 flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1597ff]/10 text-[#1597ff]">
-                  <FaEnvelope />
-                </div>
-
-                <div>
-                  <p className="text-xs text-gray-500">Email</p>
-
-                  <a
-                    href="mailto:mdmahamudulkarim5@gmail.com"
-                    className="text-sm text-gray-200 transition hover:text-[#1597ff]"
-                  >
-                    mdmahamudulkarim5@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="mb-6 flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-pink-500/10 text-pink-400">
-                  <FaPhone />
-                </div>
-
-                <div>
-                  <p className="text-xs text-gray-500">Phone</p>
-
-                  <a
-                    href="tel:+8801XXXXXXXXX"
-                    className="text-sm text-gray-200 transition hover:text-pink-400"
-                  >
-                    +880 1XXXXXXXXX
-                  </a>
-                </div>
-              </div>
-
-              {/* Location */}
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400">
-                  <FaMapMarkerAlt />
-                </div>
-
-                <div>
-                  <p className="text-xs text-gray-500">Location</p>
-
-                  <p className="text-sm text-gray-200">Bangladesh</p>
-                </div>
-              </div>
-            </div>
-
-            {/* ================= RIGHT SIDE FORM ================= */}
-            <div className="rounded-2xl border border-[#243557] bg-[#101d38] p-6 shadow-xl sm:p-8">
-              <h3 className="mb-6 text-xl font-semibold">Send Me a Message</h3>
-
-              <form
-                onSubmit={async (event) => {
-                  event.preventDefault();
-
-                  const form = event.target;
-                  const formData = new FormData(form);
-
-                  formData.append(
-                    "access_key",
-                    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                  );
-
-                  formData.append("subject", "New Message From Portfolio");
-
-                  formData.append("from_name", "Portfolio Contact Form");
-
-                  try {
-                    const response = await fetch(
-                      "https://api.web3forms.com/submit",
-                      {
-                        method: "POST",
-                        body: formData,
-                      },
-                    );
-
-                    const data = await response.json();
-
-                    if (data.success) {
-                      alert(
-                        "Thank you! Your message has been sent successfully.",
-                      );
-
-                      form.reset();
-                    } else {
-                      alert("Something went wrong. Please try again.");
-                    }
-                  } catch (error) {
-                    alert("Failed to send message. Please try again.");
-                  }
-                }}
-                className="space-y-5"
-              >
-                {/* Name + Email */}
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block text-xs text-gray-400">
-                      Name
-                    </label>
-
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your name"
-                      required
-                      className="w-full rounded-lg border border-[#33466c] bg-[#0b1730] px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-[#1597ff]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-2 block text-xs text-gray-400">
-                      Email
-                    </label>
-
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="your@email.com"
-                      required
-                      className="w-full rounded-lg border border-[#33466c] bg-[#0b1730] px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-[#1597ff]"
-                    />
-                  </div>
-                </div>
-
-                {/* Subject + Phone */}
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label className="mb-2 block text-xs text-gray-400">
-                      Subject
-                    </label>
-
-                    <input
-                      type="text"
-                      name="project_subject"
-                      placeholder="Project subject"
-                      required
-                      className="w-full rounded-lg border border-[#33466c] bg-[#0b1730] px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-[#1597ff]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-2 block text-xs text-gray-400">
-                      Phone
-                    </label>
-
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="+880..."
-                      className="w-full rounded-lg border border-[#33466c] bg-[#0b1730] px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-[#1597ff]"
-                    />
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label className="mb-2 block text-xs text-gray-400">
-                    Message
-                  </label>
-
-                  <textarea
-                    name="message"
-                    rows="5"
-                    placeholder="Tell me about your project..."
-                    required
-                    className="w-full resize-none rounded-lg border border-[#33466c] bg-[#0b1730] px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-600 focus:border-[#1597ff]"
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full rounded-full bg-gradient-to-r from-[#1597ff] to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition duration-300 hover:scale-[1.02] hover:shadow-[#1597ff]/20"
-                >
-                  Send Message ↗
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+    
       {/* ==================================================
                            FOOTER
       ================================================== */}
