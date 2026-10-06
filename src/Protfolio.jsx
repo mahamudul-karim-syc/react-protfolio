@@ -5,7 +5,6 @@ import { useState } from "react";
 
 import {
   FaReact,
-  FaNodeJs,
   FaHtml5,
   FaCss3Alt,
   FaGithub,
@@ -21,19 +20,17 @@ import {
   FaGraduationCap,
   FaPython,
   FaFacebookF,
+  FaNodeJs,
 } from "react-icons/fa";
 
 import {
   SiJavascript,
   SiTailwindcss,
   SiFastapi,
-  SiExpress,
-  SiMongodb,
   SiPython,
   SiMysql,
   SiPostgresql,
 } from "react-icons/si";
-import { MdOutlineShare } from "react-icons/md";
 
 // ======================================================
 // SKILLS DATA
@@ -438,21 +435,19 @@ const Protfolio = () => {
         )}
       </nav>
 
-      {/* ==================================================
-                      HERO
-================================================== */}
-
-      <section id="home" className="relative overflow-hidden">
+ {/* ================= Hero ================= */}
+      <section
+        id="home"
+        className="relative overflow-hidden pt-16"
+      >
         {/* Background Glow */}
-
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
 
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-14 px-5 py-16 sm:px-6 md:grid-cols-2 lg:gap-20">
-          {/* ==================================================
-                        LEFT CONTENT
-    ================================================== */}
 
+          {/* ================= LEFT CONTENT ================= */}
           <div className="text-center md:text-left">
+
             <p className="mb-3 text-base font-medium text-pink-400 sm:text-lg">
               Welcome to my portfolio
             </p>
@@ -467,18 +462,20 @@ const Protfolio = () => {
             </h2>
 
             <h3 className="mt-5 text-lg font-semibold text-gray-300 sm:text-xl">
-              Full Stack Developer
+               <span className="text-[#1597ff]">Full</span>{" "}
+              <span className="text-purple-400">Stack</span>{" "}
+              <span className="text-pink-400">Developer</span>
             </h3>
 
             <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-400 sm:text-base md:mx-0">
               I build scalable full-stack applications using React, Node.js,
-              Express and MongoDB. I love clean code, responsive design and fast
-              user experiences.
+              Express and MongoDB. I love clean code, responsive design and
+              fast user experiences.
             </p>
 
             {/* Buttons */}
-
             <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+
               <a
                 href="#projects"
                 className="rounded-full bg-gradient-to-r from-[#1597ff] to-pink-500 px-6 py-3 text-sm font-semibold shadow-lg shadow-blue-500/20 transition hover:scale-105"
@@ -492,11 +489,12 @@ const Protfolio = () => {
               >
                 Let's Collaborate ↗
               </a>
+
             </div>
 
             {/* Social */}
-
             <div className="mt-8 flex justify-center gap-4 md:justify-start">
+
               <a
                 href="https://github.com/mahamudul-karim-syc"
                 target="_blank"
@@ -507,13 +505,14 @@ const Protfolio = () => {
               </a>
 
               <a
-                href="https://linkedin.com/"
+                href="https://linkedin.com/in/md-mahamudul-karim-97651a380"
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-gray-600 transition hover:border-[#1597ff] hover:text-[#1597ff]"
               >
                 <FaLinkedinIn />
               </a>
+
               <a
                 href="https://facebook.com/"
                 target="_blank"
@@ -522,151 +521,237 @@ const Protfolio = () => {
               >
                 <FaFacebookF />
               </a>
+
             </div>
           </div>
 
-          {/* ==================================================
-              RIGHT PROFILE + ICONS
-================================================== */}
+          {/* ================================================= */}
+          {/* RIGHT PROFILE + SKILLS ORBIT                     */}
+          {/* ================================================= */}
 
-          <div className="relative flex min-h-[440px] items-center justify-center sm:min-h-[520px]">
-            {/* Main Glow */}
-            <div className="pointer-events-none absolute h-72 w-72 rounded-full bg-blue-500/20 blur-3xl sm:h-96 sm:w-96" />
+          <div className="relative flex min-h-[500px] items-center justify-center sm:min-h-[580px] lg:min-h-[620px]">
 
-            {/* ==================================================
-                    ORBIT CIRCLES
-  ================================================== */}
+            {/* Outer Glow */}
+            <div className="pointer-events-none absolute h-[360px] w-[360px] rounded-full bg-blue-500/10 blur-[90px] sm:h-[500px] sm:w-[500px]" />
 
-            {/* Outer Orbit */}
-            <div className="absolute h-[340px] w-[340px] rounded-full border border-[#1597ff]/30 sm:h-[460px] sm:w-[460px]" />
+            {/* ================= OUTER ORBIT ================= */}
+            <div
+              className="
+                absolute
+                h-[360px] w-[360px]
+                rounded-full
+                border border-[#1597ff]/50
+                animate-[spin_30s_linear_infinite]
+                sm:h-[500px] sm:w-[500px]
+              "
+            />
 
-            {/* Inner Orbit */}
-            <div className="absolute h-[275px] w-[275px] rounded-full border border-dashed border-[#1597ff]/30 sm:h-[370px] sm:w-[370px]" />
+            {/* ================= INNER ORBIT ================= */}
+            <div
+              className="
+                absolute
+                h-[290px] w-[290px]
+                rounded-full
+                border border-dashed border-cyan-400/40
+                animate-[spin_20s_linear_infinite_reverse]
+                sm:h-[390px] sm:w-[390px]
+              "
+            />
 
-            {/* ==================================================
-                    PROFILE IMAGE
-  ================================================== */}
-
+            {/* ================= PROFILE ================= */}
             <div className="relative z-20">
-              {/* Profile Glow */}
-              <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-[#1597ff] via-purple-500 to-pink-500 opacity-80 blur-md" />
 
-              {/* Profile Border */}
-              <div className="relative h-56 w-56 rounded-full bg-gradient-to-r from-[#1597ff] via-purple-500 to-pink-500 p-[4px] shadow-[0_0_70px_rgba(21,151,255,0.45)] sm:h-72 sm:w-72">
-                <div className="h-full w-full overflow-hidden rounded-full border-4 border-[#0b1730] bg-black">
+              {/* Profile Glow */}
+              <div className="absolute -inset-5 rounded-full bg-gradient-to-r from-[#1597ff] via-purple-500 to-pink-500 opacity-70 blur-xl" />
+
+              {/* Profile Ring */}
+              <div className="relative h-56 w-56 rounded-full bg-gradient-to-r from-[#1597ff] via-purple-500 to-pink-500 p-[5px] shadow-[0_0_70px_rgba(21,151,255,0.55)] sm:h-72 sm:w-72">
+
+                <div className="h-full w-full overflow-hidden rounded-full border-[5px] border-[#0b1730] bg-[#0b1730]">
+
                   <img
                     src={profile}
                     alt="Mahamudul Karim"
                     className="h-full w-full object-cover"
                   />
+
                 </div>
               </div>
             </div>
 
-            {/* ==================================================
-                    JAVASCRIPT
-                    TOP CENTER
-  ================================================== */}
+            {/* ================================================= */}
+            {/* SKILLS ORBIT */}
+            {/* ================================================= */}
 
-            <div className="absolute left-1/2 top-[1%] z-30 flex h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border-2 border-yellow-400 bg-[#102c54] shadow-[0_0_25px_rgba(250,204,21,0.45)] sm:top-[3%] sm:h-14 sm:w-14">
-              <SiJavascript className="text-2xl text-yellow-400 sm:text-3xl" />
+            <div
+              className="
+                absolute
+                left-1/2
+                top-1/2
+                h-[360px]
+                w-[360px]
+                -translate-x-1/2
+                -translate-y-1/2
+                animate-[spin_30s_linear_infinite]
+                sm:h-[500px]
+                sm:w-[500px]
+              "
+            >
+
+              {/* ================= JAVASCRIPT ================= */}
+              <div
+                className="
+                  absolute
+                  left-1/2
+                  top-[-4%]
+                  -translate-x-1/2
+                  flex
+                  flex-col
+                  items-center
+                  animate-[spin_30s_linear_infinite_reverse]
+                "
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-yellow-400 bg-[#102c54] shadow-[0_0_30px_rgba(250,204,21,0.6)] sm:h-16 sm:w-16">
+                  <SiJavascript className="text-2xl text-yellow-400 sm:text-3xl" />
+                </div>
+
+                <span className="mt-2 text-[10px] font-bold tracking-widest text-white sm:text-xs">
+                  JAVASCRIPT
+                </span>
+              </div>
+
+              {/* ================= HTML ================= */}
+              <div
+                className="
+                  absolute
+                  left-[7%]
+                  top-[18%]
+                  flex
+                  flex-col
+                  items-center
+                  animate-[spin_30s_linear_infinite_reverse]
+                "
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-orange-400 bg-[#102c54] shadow-[0_0_30px_rgba(249,115,22,0.6)] sm:h-16 sm:w-16">
+                  <FaHtml5 className="text-2xl text-orange-500 sm:text-3xl" />
+                </div>
+
+                <span className="mt-2 text-[10px] font-bold tracking-widest text-white sm:text-xs">
+                  HTML
+                </span>
+              </div>
+
+              {/* ================= CSS ================= */}
+              <div
+                className="
+                  absolute
+                  left-[1%]
+                  top-[48%]
+                  flex
+                  flex-col
+                  items-center
+                  animate-[spin_30s_linear_infinite_reverse]
+                "
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-blue-400 bg-[#102c54] shadow-[0_0_30px_rgba(96,165,250,0.6)] sm:h-16 sm:w-16">
+                  <FaCss3Alt className="text-2xl text-blue-400 sm:text-3xl" />
+                </div>
+
+                <span className="mt-2 text-[10px] font-bold tracking-widest text-white sm:text-xs">
+                  CSS
+                </span>
+              </div>
+
+              {/* ================= REACT ================= */}
+              <div
+                className="
+                  absolute
+                  right-[7%]
+                  top-[18%]
+                  flex
+                  flex-col
+                  items-center
+                  animate-[spin_30s_linear_infinite_reverse]
+                "
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#102c54] shadow-[0_0_30px_rgba(34,211,238,0.6)] sm:h-16 sm:w-16">
+                  <FaReact className="text-2xl text-[#61dafb] sm:text-3xl" />
+                </div>
+
+                <span className="mt-2 text-[10px] font-bold tracking-widest text-white sm:text-xs">
+                  REACT
+                </span>
+              </div>
+
+              {/* ================= NODE JS ================= */}
+              <div
+                className="
+                  absolute
+                  right-[1%]
+                  top-[48%]
+                  flex
+                  flex-col
+                  items-center
+                  animate-[spin_30s_linear_infinite_reverse]
+                "
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-green-400 bg-[#102c54] shadow-[0_0_30px_rgba(74,222,128,0.6)] sm:h-16 sm:w-16">
+                  <FaNodeJs className="text-2xl text-green-400 sm:text-3xl" />
+                </div>
+
+                <span className="mt-2 text-[10px] font-bold tracking-widest text-white sm:text-xs">
+                  NODE.JS
+                </span>
+              </div>
+
+              {/* ================= FASTAPI ================= */}
+              <div
+                className="
+                  absolute
+                  bottom-[13%]
+                  left-[10%]
+                  flex
+                  flex-col
+                  items-center
+                  animate-[spin_30s_linear_infinite_reverse]
+                "
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#102c54] shadow-[0_0_30px_rgba(34,211,238,0.6)] sm:h-16 sm:w-16">
+                  <SiFastapi className="text-2xl text-cyan-300 sm:text-3xl" />
+                </div>
+
+                <span className="mt-2 text-[10px] font-bold tracking-widest text-white sm:text-xs">
+                  FASTAPI
+                </span>
+              </div>
+
+              {/* ================= PYTHON ================= */}
+              <div
+                className="
+                  absolute
+                  bottom-[3%]
+                  left-1/2
+                  -translate-x-1/2
+                  flex
+                  flex-col
+                  items-center
+                  animate-[spin_30s_linear_infinite_reverse]
+                "
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-yellow-400 bg-[#102c54] shadow-[0_0_30px_rgba(250,204,21,0.6)] sm:h-16 sm:w-16">
+                  <FaPython className="text-2xl text-yellow-400 sm:text-3xl" />
+                </div>
+
+                <span className="mt-2 text-[10px] font-bold tracking-widest text-white sm:text-xs">
+                  PYTHON
+                </span>
+              </div>
+
             </div>
-
-            {/* ==================================================
-                    REACT
-                    TOP RIGHT
-  ================================================== */}
-
-            <div className="absolute right-[10%] top-[9%] z-30 flex h-11 w-11 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#102c54] shadow-[0_0_25px_rgba(34,211,238,0.45)] sm:right-[11%] sm:top-[8%] sm:h-14 sm:w-14">
-              <FaReact className="text-2xl text-[#61dafb] sm:text-3xl" />
-            </div>
-
-            {/* ==================================================
-                    NODE JS
-                    RIGHT TOP
-  ================================================== */}
-
-            <div className="absolute right-[0%] top-[27%] z-30 flex h-11 w-11 items-center justify-center rounded-full border-2 border-green-400 bg-[#102c54] shadow-[0_0_25px_rgba(74,222,128,0.45)] sm:right-[3%] sm:top-[28%] sm:h-14 sm:w-14">
-              <FaNodeJs className="text-2xl text-green-400 sm:text-3xl" />
-            </div>
-
-            {/* ==================================================
-                    MONGODB
-                    RIGHT CENTER
-  ================================================== */}
-
-            <div className="absolute right-[0%] top-[49%] z-30 flex h-11 w-11 items-center justify-center rounded-full border-2 border-green-400 bg-[#102c54] shadow-[0_0_25px_rgba(74,222,128,0.45)] sm:right-[3%] sm:top-[50%] sm:h-14 sm:w-14">
-              <SiMongodb className="text-2xl text-green-400 sm:text-3xl" />
-            </div>
-
-            {/* ==================================================
-                    EXPRESS
-                    BOTTOM RIGHT
-  ================================================== */}
-
-            <div className="absolute bottom-[10%] right-[9%] z-30 flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-[#102c54] shadow-[0_0_25px_rgba(255,255,255,0.35)] sm:right-[11%] sm:h-14 sm:w-14">
-              <SiExpress className="text-2xl text-white sm:text-3xl" />
-            </div>
-
-            {/* ==================================================
-                    PYTHON
-                    BOTTOM CENTER
-  ================================================== */}
-
-            <div className="absolute bottom-[1%] left-1/2 z-30 flex h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border-2 border-yellow-400 bg-[#102c54] shadow-[0_0_25px_rgba(250,204,21,0.45)] sm:bottom-[2%] sm:h-14 sm:w-14">
-              <FaPython className="text-2xl text-yellow-400 sm:text-3xl" />
-            </div>
-
-            {/* ==================================================
-                    FAST API
-                    BOTTOM LEFT
-  ================================================== */}
-
-            <div className="absolute bottom-[10%] left-[9%] z-30 flex h-11 w-11 items-center justify-center rounded-full border-2 border-cyan-400 bg-[#102c54] shadow-[0_0_25px_rgba(34,211,238,0.45)] sm:left-[11%] sm:h-14 sm:w-14">
-              <SiFastapi className="text-2xl text-cyan-300 sm:text-3xl" />
-            </div>
-
-            {/* ==================================================
-                    CSS
-                    LEFT CENTER
-  ================================================== */}
-
-            <div className="absolute left-[0%] top-[51%] z-30 flex h-11 w-11 items-center justify-center rounded-full border-2 border-blue-400 bg-[#102c54] shadow-[0_0_25px_rgba(96,165,250,0.45)] sm:left-[3%] sm:top-[52%] sm:h-14 sm:w-14">
-              <FaCss3Alt className="text-2xl text-blue-400 sm:text-3xl" />
-            </div>
-
-            {/* ==================================================
-                    HTML
-                    TOP LEFT
-  ================================================== */}
-
-            <div className="absolute left-[9%] top-[18%] z-30 flex h-11 w-11 items-center justify-center rounded-full border-2 border-orange-400 bg-[#102c54] shadow-[0_0_25px_rgba(249,115,22,0.45)] sm:left-[11%] sm:top-[18%] sm:h-14 sm:w-14">
-              <FaHtml5 className="text-2xl text-orange-500 sm:text-3xl" />
-            </div>
-
-            {/* ==================================================
-                    SHARE
-                    LEFT CENTER
-  ================================================== */}
-
-            <div className="absolute left-[4%] top-[38%] z-30 flex h-9 w-9 items-center justify-center rounded-full border border-blue-400 bg-[#102c54] shadow-[0_0_20px_rgba(21,151,255,0.4)] sm:left-[10%] sm:top-[38%] sm:h-11 sm:w-11">
-              <MdOutlineShare className="text-lg text-[#1597ff] sm:text-xl" />
-            </div>
-
-            {/* ==================================================
-                    ORBIT DOTS
-  ================================================== */}
-
-            <span className="absolute left-[22%] top-[8%] h-2 w-2 rounded-full bg-[#1597ff] shadow-[0_0_10px_#1597ff]" />
-
-            <span className="absolute right-[20%] top-[9%] h-2 w-2 rounded-full bg-pink-400 shadow-[0_0_10px_#f472b6]" />
-
-            <span className="absolute right-[19%] bottom-[8%] h-2 w-2 rounded-full bg-[#1597ff] shadow-[0_0_10px_#1597ff]" />
-
-            <span className="absolute left-[20%] bottom-[8%] h-2 w-2 rounded-full bg-pink-400 shadow-[0_0_10px_#f472b6]" />
           </div>
         </div>
       </section>
+
       {/* ==================================================
                             ABOUT
       ================================================== */}
@@ -694,7 +779,8 @@ const Protfolio = () => {
 
           <div>
             <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-              About <span className="text-[#1597ff]">Me</span>
+              <span className="text-pink-300"> About</span>
+              <span className="text-[#1597ff]">Me</span>
             </h2>
 
             <p className="mt-6 text-sm leading-7 text-gray-400 sm:text-base">
@@ -734,8 +820,7 @@ const Protfolio = () => {
         }`}
       >
         <SectionTitle
-          title="Skills &"
-          highlight="Technologies"
+          highlight="Skills & Technologies"
           description="I work with modern tools and technologies to build fast, scalable and efficient web applications."
         />
 
@@ -757,8 +842,8 @@ const Protfolio = () => {
         }`}
       >
         <SectionTitle
-          title="Recent"
-          highlight="Projects"
+          
+          highlight="Recent Projects"
           description="A selection of projects I've built using modern technologies and clean development practices."
         />
 
@@ -779,15 +864,11 @@ const Protfolio = () => {
         }`}
       >
         {/* Heading */}
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-            Qualification
-          </h2>
-
-          <p className="mt-3 text-sm text-gray-400 sm:text-base">
-            My educational journey
-          </p>
-        </div>
+        
+        <SectionTitle
+          highlight=" Qualification"
+          description=" My educational journey"
+        />
 
         {/* Timeline */}
         <div className="mx-auto mt-16 max-w-5xl">
@@ -900,8 +981,7 @@ const Protfolio = () => {
         }`}
       >
         <SectionTitle
-          title="Contact"
-          highlight="Me"
+          highlight="ContactMe"
           description="Let's build something amazing together."
         />
 
@@ -1074,7 +1154,6 @@ const Protfolio = () => {
         </div>
       </section>
 
-    
       {/* ==================================================
                            FOOTER
       ================================================== */}
